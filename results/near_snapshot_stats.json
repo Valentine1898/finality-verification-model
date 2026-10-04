@@ -1,0 +1,15 @@
+{
+ "snapshot_height": 218416559,
+ "epoch_id": "5MAKELbL2ZDeodz8FVdMzLDcsMEcExiNANYcXkWcZ8iv",
+ "n_bp": 100,
+ "approvals_present": 71,
+ "signed_stake_fraction": 0.7676078358941767,
+ "n_for_1_3": 8,
+ "n_for_2_3": 23,
+ "top1_share": 0.06319859229997148,
+ "top10_share": 0.4172293993669086,
+ "min_share": 0.0011683899071287,
+ "gini": 0.571114383909374,
+ "lcb_json_bytes": 26583,
+ "lcb_borsh_model_bytes": 12493
+}

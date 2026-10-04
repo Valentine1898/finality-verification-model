@@ -1,0 +1,45 @@
+parameter,value,unit,source,kind
+proof_bytes_final,180112,B,"Kuznetsov et al., 2024b (CEUR-WS 3826), p.101-102",published
+proof_bytes_sig,133080,B,"Kuznetsov et al., 2024b (CEUR-WS 3826), p.100",published
+t_verify_S2_ms_lo,4.0,ms,"CEUR-WS 3826, p.100 (block-hash proof, ~4 ms)",published
+t_verify_S2_ms_nom,4.5,ms,"CEUR-WS 3826, p.101 (next_bp_hash proof, ~4.5 ms)",published
+t_verify_S2_ms_hi,5.1,ms,"CEUR-WS 3826, p.100 (signature proof, 4.6-5.1 ms)",published
+t_final_aggregation_s,0.47,s,"CEUR-WS 3826, p.101 (final aggregation step = part of proof generation; p.102 calls it light-client verification) - NOT USED",published
+t_verify_rec_ryzen7_ms,5.5-7.0,ms,"Kuznetsov et al., 2024a (LNNS 1091), p.275, Table 4",published
+clk_GHz_lo,4.5,GHz,"CEUR-WS 3826, p.99 (Ryzen 9 7950X base)",published
+clk_GHz_nom,4.7,GHz,"CEUR-WS 3826, p.99 (stated clock)",published
+clk_GHz_hi,5.7,GHz,"CEUR-WS 3826, p.99 (max boost)",published
+t_gen_S2_s,806-1073,s,"CEUR-WS 3826, p.101 (prover side; not part of per-act verifier cost)",published
+sha256_cycles_per_byte,15,cycles/B,"LNNS 1091, p.275 (Crypto++ benchmark cited there)",published
+ed_cycles_single,273364,cycles,"Bernstein et al., 2012, p.78 (Westmere)",external-verified
+ed_cycles_batch,134000,cycles,"Bernstein et al., 2012, p.78 (batch of 64)",external-verified
+lambda_ed25519,128,bit,"Bernstein et al., 2012 (2^128 security target)",external-verified
+lambda_S2,100,bit,"Plonky2 README, Security: default FRI = 100 bits conjectured (ethSTARK conjecture)",external-verified
+lambda_poseidon_plonky2,95,bit,"Plonky2 README citing Bariant et al., 2022",external-verified
+sig_bytes,64,B,RFC 8032 (Ed25519 signature),external-verified
+pk_bytes,32,B,RFC 8032 (Ed25519 public key),external-verified
+stake_bytes,16,B,nearcore views.rs: stake u128,external-verified
+near_epoch_length,43200,blocks,"NEAR RPC EXPERIMENTAL_protocol_config, 2026-10-04",external-verified
+near_bp_seats,100,validators,"NEAR RPC EXPERIMENTAL_protocol_config, 2026-10-04",external-verified
+near_lcb_json_bytes,,B,"NEAR RPC next_light_client_block, 2026-10-04 (measured)",external-measured
+TX_BASE,21000,gas,ethereum/execution-specs prague gas.py; EIP-7623,external-verified
+TOKEN_STD,4,gas/token,"EIP-7623 STANDARD_TOKEN_COST (=16 gas/non-zero byte, EIP-2028)",external-verified
+TOKEN_FLOOR,10,gas/token,"EIP-7623 TOTAL_COST_FLOOR_PER_TOKEN (Prague, EIP-7600)",external-verified
+ECADD,150,gas,EIP-1108,external-verified
+ECMUL,6000,gas,EIP-1108,external-verified
+PAIR_BASE,45000,gas,EIP-1108,external-verified
+PAIR_PER_POINT,34000,gas,EIP-1108,external-verified
+KECCAK_BASE,30,gas,execution-specs gas.py,external-verified
+KECCAK_WORD,6,gas,execution-specs gas.py,external-verified
+SHA256_BASE,60,gas,execution-specs gas.py,external-verified
+SHA256_WORD,12,gas,execution-specs gas.py,external-verified
+STORAGE_SET,20000,gas,execution-specs gas.py,external-verified
+ECRECOVER,3000,gas,execution-specs gas.py,external-verified
+G_ed_EIP665,2000,gas,"EIP-665 proposed ED25519VFY price (status Stagnant, not deployed)",external-verified
+G_S2_ultraplonk_hi,943720,gas,"Bhatt et al., 2025, Fig.3 (UltraPLONK, |V|=1e6; ePrint 2025/057 p.16)",external-verified
+G_S2_ultraplonk_lo,797216,gas,"Bhatt et al., 2025, Fig.3 (UltraPLONK, |V|=10)",external-verified
+groth16_public_inputs,3,count,ASSUMPTION A3: Plonky2 proof wrapped into Groth16/BN254 with 3 public inputs,assumption
+q_participation,0.71,fraction,ASSUMPTION A2 (= share of non-empty approvals in RPC snapshot; range 0.67-1.0),assumption
+account_id_bytes_generic,20,B,ASSUMPTION A8 (generic chains); NEAR uses real ids from snapshot,assumption
+grinding_r,0; 2^10; 2^64,realizations,ASSUMPTION A5 (local / on-chain RANDAO after Bhatt et al. / non-interactive Fiat-Shamir),assumption
+G_ed_pure_EVM,1e5-1e6,gas,ASSUMPTION A4 (no primary source; EIP-665 only says 'very high'),assumption

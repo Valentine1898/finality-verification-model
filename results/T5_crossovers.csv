@@ -1,0 +1,50 @@
+metric,pair,variant,n_star
+CPU (цикли),S1 vs S2,S2 lo,103
+"CPU (цикли), S1 пакетна",S1b vs S2,S2 lo,211
+обсяг даних (Б),S1 vs S2,S2 lo,1569
+CPU (цикли),"S3(ε=2^-40,r=0) vs S2",S2 lo,
+обсяг даних (Б),"S3(ε=2^-40,r=0) vs S2",S2 lo,
+CPU (цикли),"S3(ε=2^-40,r=2^64) vs S2",S2 lo,242
+обсяг даних (Б),"S3(ε=2^-40,r=2^64) vs S2",S2 lo,
+CPU (цикли),"S3(ε=2^-80,r=0) vs S2",S2 lo,451
+обсяг даних (Б),"S3(ε=2^-80,r=0) vs S2",S2 lo,
+CPU (цикли),"S3(ε=2^-80,r=2^64) vs S2",S2 lo,201
+обсяг даних (Б),"S3(ε=2^-80,r=2^64) vs S2",S2 lo,
+CPU (цикли),S1 vs S2,S2 nom,116
+"CPU (цикли), S1 пакетна",S1b vs S2,S2 nom,236
+обсяг даних (Б),S1 vs S2,S2 nom,1569
+CPU (цикли),"S3(ε=2^-40,r=0) vs S2",S2 nom,
+обсяг даних (Б),"S3(ε=2^-40,r=0) vs S2",S2 nom,
+CPU (цикли),"S3(ε=2^-40,r=2^64) vs S2",S2 nom,326
+обсяг даних (Б),"S3(ε=2^-40,r=2^64) vs S2",S2 nom,
+CPU (цикли),"S3(ε=2^-80,r=0) vs S2",S2 nom,1135
+обсяг даних (Б),"S3(ε=2^-80,r=0) vs S2",S2 nom,
+CPU (цикли),"S3(ε=2^-80,r=2^64) vs S2",S2 nom,231
+обсяг даних (Б),"S3(ε=2^-80,r=2^64) vs S2",S2 nom,
+CPU (цикли),S1 vs S2,S2 hi,133
+"CPU (цикли), S1 пакетна",S1b vs S2,S2 hi,265
+обсяг даних (Б),S1 vs S2,S2 hi,1569
+CPU (цикли),"S3(ε=2^-40,r=0) vs S2",S2 hi,
+обсяг даних (Б),"S3(ε=2^-40,r=0) vs S2",S2 hi,
+CPU (цикли),"S3(ε=2^-40,r=2^64) vs S2",S2 hi,530
+обсяг даних (Б),"S3(ε=2^-40,r=2^64) vs S2",S2 hi,
+CPU (цикли),"S3(ε=2^-80,r=0) vs S2",S2 hi,
+обсяг даних (Б),"S3(ε=2^-80,r=0) vs S2",S2 hi,
+CPU (цикли),"S3(ε=2^-80,r=2^64) vs S2",S2 hi,284
+обсяг даних (Б),"S3(ε=2^-80,r=2^64) vs S2",S2 hi,
+газ EVM,S1 vs S2,S2 Groth16 (A3); G_ed=2000,39
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 Groth16 (A3); G_ed=2000,36
+газ EVM,S1 vs S2,S2 Groth16 (A3); G_ed=3000,39
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 Groth16 (A3); G_ed=3000,36
+газ EVM,S1 vs S2,S2 Groth16 (A3); G_ed=100000,10
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 Groth16 (A3); G_ed=100000,10
+газ EVM,S1 vs S2,S2 Groth16 (A3); G_ed=1e+06,10
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 Groth16 (A3); G_ed=1e+06,10
+газ EVM,S1 vs S2,S2 UltraPLONK (Bhatt et al.); G_ed=2000,171
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 UltraPLONK (Bhatt et al.); G_ed=2000,220
+газ EVM,S1 vs S2,S2 UltraPLONK (Bhatt et al.); G_ed=3000,171
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 UltraPLONK (Bhatt et al.); G_ed=3000,220
+газ EVM,S1 vs S2,S2 UltraPLONK (Bhatt et al.); G_ed=100000,12
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 UltraPLONK (Bhatt et al.); G_ed=100000,21
+газ EVM,S1 vs S2,S2 UltraPLONK (Bhatt et al.); G_ed=1e+06,10
+газ EVM,"S3(ε=2^-80,r=2^10) vs S2",S2 UltraPLONK (Bhatt et al.); G_ed=1e+06,10
