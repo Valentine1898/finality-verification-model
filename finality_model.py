@@ -275,7 +275,7 @@ def kstar_from_curve(lp, eps_bits, r=0.0):
     return np.nan
 
 # ----------------------------------------------------------------------------
-# 4. Модель вартості одного акту синхронізації
+# 4. Модель вартості одного кроку синхронізації
 #    (прийняти фіналізований заголовок нової епохи + перехід набору валідаторів)
 # ----------------------------------------------------------------------------
 HDR = 32 + 32 + 208 + 32   # LightClientBlockView без списків (nomicon; views.rs)
@@ -704,14 +704,14 @@ def fig2_kstar_and_degradation(out):
     for n_, ls in [(100, "-"), (1000, "--"), ("∞", ":")]:
         d = T7[(T7["n"] == n_) & (T7["design_eps"] == "2^-80")]
         y = d["bits_S3"].replace(np.inf, np.nan)
-        ax.plot(d["f_true"], y, ls, color=C["S3"], marker="o", ms=2.5, lw=1.2, label=f"S3, k налаштовано на f = 1/3, n = {n_}")
-    ax.axhline(LAMBDA_ED, color=C["S1"], lw=1.0, label="S1/S4 (Ed25519), до f < 2/3")
-    ax.axhline(LAMBDA_S2, color=C["S2"], lw=1.0, label="S2 (Plonky2, гіпотетично), до f < 2/3")
+        ax.plot(d["f_true"], y, ls, color=C["S3"], marker="o", ms=2.5, lw=1.2, label=f"S3, n = {n_}")
+    ax.axhline(LAMBDA_ED, color=C["S1"], lw=1.0, label="S1/S4 (Ed25519)")
+    ax.axhline(LAMBDA_S2, color=C["S2"], lw=1.0, label="S2 (Plonky2, оцінена стійкість)")
     ax.axhline(80, color="0.75", lw=0.6)
     ax.set_xlabel("фактична частка зловмисного стейку f")
     ax.set_ylabel("стійкість, біт")
     ax.set_ylim(0, 140)
-    ax.legend(loc="center right", bbox_to_anchor=(1.0, 0.47), fontsize=6)
+    ax.legend(loc="upper right", bbox_to_anchor=(1.0, 0.69), fontsize=6)
     letter(ax, "б")
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "fig6_kstar_degradation.png"), dpi=300)
@@ -766,7 +766,7 @@ def fig4_cost_vs_n(out):
     ax.fill_between(ns, cost_S2("lo")["cycles"] / 1e6, cost_S2("hi")["cycles"] / 1e6, color=C["S2"], alpha=0.25, lw=0)
     ax.axhline(cost_S2("nom")["cycles"] / 1e6, color=C["S2"], lw=1.3, label="S2 (смуга — діапазон)")
     ax.set_xscale("log"); ax.set_yscale("log")
-    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("млн тактів на акт")
+    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("млн тактів на крок")
     ax.set_title("Обчислення", loc="left"); ax.legend(fontsize=5.5, loc="upper left")
     letter(ax, "а")
     # bytes
@@ -778,7 +778,7 @@ def fig4_cost_vs_n(out):
     ax.fill_between(ns, cost_S2("lo")["bytes"] / 1e3, cost_S2("hi")["bytes"] / 1e3, color=C["S2"], alpha=0.25, lw=0)
     ax.axhline(cost_S2("nom")["bytes"] / 1e3, color=C["S2"], lw=1.3, label="S2")
     ax.set_xscale("log"); ax.set_yscale("log")
-    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("КБ на акт")
+    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("КБ на крок")
     ax.set_title("Обсяг даних", loc="left"); ax.legend(fontsize=5.5, loc="upper left")
     letter(ax, "б")
     # gas
@@ -790,7 +790,7 @@ def fig4_cost_vs_n(out):
     ax.axhline(GAS_S2["UltraPLONK (Bhatt et al.)"] / 1e6, color=C["S2"], lw=1.0, ls="--", label="S2, рівень UltraPLONK")
     ax.axhline(gas_S2_direct_lower() / 1e6, color=C["S2"], lw=0.8, ls=":", label="S2 без обгортки (лише calldata)")
     ax.set_xscale("log"); ax.set_yscale("log")
-    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("млн газу на акт")
+    ax.set_xlabel("кількість валідаторів n"); ax.set_ylabel("млн газу на крок")
     ax.set_title(r"Газ EVM ($\varepsilon = 2^{-80}$, $r = 2^{10}$)", loc="left"); ax.legend(fontsize=5, loc="upper left")
     letter(ax, "в")
     fig.tight_layout()
